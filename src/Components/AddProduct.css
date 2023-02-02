@@ -1,0 +1,29 @@
+.product {
+    margin-left: 30%;
+    /* width: 500px; */
+}
+
+.inputBox {
+    padding: 7px;
+    display: block;
+    width: 500px;
+    margin: 20px;
+    align-items: center;
+    
+}
+
+.addButton {
+    background-color: orange;
+    display: "flex";
+    justify-content: center;
+    align-items: center;  
+    margin-right: 900px;
+    width: 150px;
+    cursor: pointer;
+    height: 40px;
+}
+
+.invalid-input {
+    color: red;
+    display: block;
+}
