@@ -4,6 +4,7 @@ import SignUp from './Components/Sign-Up';
 import SignIn from './Components/Sign-In';
 import Nav from './Components/Nav';
 import AddProduct from './Components/AddProduct';
+import ProductList from './Components/ProductList';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
     <Nav />
 
     <Routes>
-    <Route path="/" element={<h1>Home Component</h1>}></Route>
+    <Route path="/" element={<ProductList />}></Route>
     
     <Route path="/register" element={<SignUp />}></Route>
 

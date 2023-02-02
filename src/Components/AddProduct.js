@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './AddProduct.css'
+import netflixLogo from '../../src/assets/images/netflixLogo.jpg';
+
 
 
 const AddProduct = () =>{
@@ -48,10 +50,16 @@ console.log("result",result);
 } 
 
   return(
-      <div className="product">
-          <h1 className='inputBox'>Add Product...!!</h1>
+    <div
+      className="Auth-form-container"
+      style={{
+        netflixLogo: `url('../../src/assets/images/netflixLogo.jpg')`,
+        backgroundImage: `url(${netflixLogo})`,
+      }}
+    >
+          {/* <h1 className='inputBox'>Add Product...!!</h1> */}
 
-          <form>
+          {/* <form>
 <div className="inputBox">
   <label for="exampleInputEmail1">User Name</label>
   <input value={name}  onChange={(e)=>{setName(e.target.value)}} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" />
@@ -87,7 +95,73 @@ console.log("result",result);
 <Link to="/add"><button onClick={addProduct} type="submit" className="addButton">Submit</button></Link>
 
      
-</form>
+</form> */}
+
+<form className="Auth-form">
+        <div className="Auth-form-content">
+          <h3 className="Auth-form-title">Add Details Product</h3>
+
+          <div className="form-group mt-3">
+            <label>User Name</label>
+            <input
+            value={name} onChange={(e)=>{setName(e.target.value)}}
+              type="text"
+              className="form-control mt-1"
+              placeholder="e.g Jane Doe"
+            />
+            { error && !name && <span className='invalid-input'>Enter Valid Name</span>}
+          </div>
+
+
+          <div className="form-group mt-3">
+            <label>Age</label>
+            <input
+             value={age} onChange={(e)=>{setAge(e.target.value)}}
+              type="text"
+              className="form-control mt-1"
+              placeholder="Enter your Age"              
+            />
+          { error && !age && <span className='invalid-input'>Enter Valid Age</span>}
+          </div>
+
+
+          <div className="form-group mt-3">
+            <label>City</label>
+            <input
+            value={city} onChange={(e)=>{setCity(e.target.value)}}
+              type="text"
+              className="form-control mt-1"
+              placeholder="Enter your Age"
+            />
+            { error && !city && <span className='invalid-input'>Enter Valid City</span>}
+          </div>
+
+          <div className="form-group mt-3">
+            <label>Salary</label>
+            <input
+            value={salary} onChange={(e)=>{setSalary(e.target.value)}}
+              type="text"
+              className="form-control mt-1"
+              placeholder="Enter your Salary"
+            />
+            { error && !salary && <span className='invalid-input'>Enter Valid Salary</span>}
+          </div>
+
+
+
+          <div className="d-grid gap-2 mt-3">
+
+                        <button
+                         onClick={addProduct}
+                          type="button"
+                          className="btn btn-primary"
+                        >
+                          Add Details
+                        </button>
+          
+                      </div>
+        </div>
+      </form>
 
       </div>
   )
