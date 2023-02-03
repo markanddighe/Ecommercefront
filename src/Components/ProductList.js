@@ -1,119 +1,72 @@
-
+import React, { useEffect, useState } from 'react'
+import './ProductList.css'
 
 
 const ProductList = () =>{
 
+  const [products, setProducts] = useState([])
+
+    
+    useEffect(()=>{
+
+        getProducts()
+    },[])
+
+// Bearer ka dhyan rakha kro.................
+    const getProducts = async () =>{
+
+      let result= await fetch("http://localhost:3000/get",{
+
+        headers:{
+          authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}`
+        }
+      })
+  
+          result= await result.json()
+
+          setProducts(result)
+  }
+  console.log("product",products);
+
+
             return(
-        <div>
-<table class="table table-dark">
+         <div className="table">
+
+<table className="table table-hover table-dark height">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">City</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Actions</th>
+      <th scope="col"></th>
+     
     </tr>
   </thead>
+
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-  </tbody>
-  <thead mt-4>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">q</th>
-      <th scope="col">s</th>
-      <th scope="col">Handle</th>
-      <th scope="col">c</th>
-      <th scope="col">a</th>
-      <th scope="col">d</th>
-      <th scope="col">p</th>
 
+  {
+
+      products.map((item, index)=>
+
+    <tr>
+      <th scope="row">{index + 1}</th>
+      <td>{item.name}</td>
+      <td>{item.age}</td>
+      <td>{item.city}</td>
+      <td>{item.salary}</td>
 
     </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-    </tr>
+    )
+   
+  }
   </tbody>
 </table>
+
+
         </div>
              )
 }
