@@ -19,10 +19,7 @@
 } */
 
 
-.App {
-    background-color: skyblue;
-  }
-  
+
   .Auth-form-container {
     display: flex;
     justify-content: center;
