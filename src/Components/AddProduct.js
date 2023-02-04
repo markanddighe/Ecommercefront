@@ -164,10 +164,6 @@ console.log("result",result);
                         </button>
           
                       </div>
-
-                      {/* <div className="d-grid gap-2 mt-3">
-<Link to="/add"><button onClick={addProduct} type="submit" className="addButton">Submit</button></Link>
- </div> */}
         </div>
       </form>
 
