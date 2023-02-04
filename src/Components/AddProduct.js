@@ -153,7 +153,7 @@ console.log("result",result);
 
 
 
-          {/* <div className="d-grid gap-2 mt-3">
+          <div className="d-grid gap-2 mt-3">
 
                         <button
                          onClick={addProduct}
@@ -163,11 +163,11 @@ console.log("result",result);
                           Add Details
                         </button>
           
-                      </div> */}
+                      </div>
 
-                      <div className="d-grid gap-2 mt-3">
+                      {/* <div className="d-grid gap-2 mt-3">
 <Link to="/add"><button onClick={addProduct} type="submit" className="addButton">Submit</button></Link>
- </div>
+ </div> */}
         </div>
       </form>
 
