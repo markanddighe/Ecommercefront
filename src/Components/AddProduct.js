@@ -177,4 +177,6 @@ console.log("result",result);
 
 
 
+// export default AddProduct
 export default AddProduct
+
