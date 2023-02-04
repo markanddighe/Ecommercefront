@@ -14,7 +14,7 @@ function App() {
     <Nav />
 
     <Routes>
-    <Route path="/" element={<ProductList />}></Route>
+    <Route path="/api/get" element={<ProductList />}></Route>
     
     <Route path="/register" element={<SignUp />}></Route>
 
