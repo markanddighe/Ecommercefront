@@ -16,6 +16,8 @@ const ProductList = () =>{
     const getProducts = async () =>{
 
       let result= await fetch("https://drab-red-cape-buffalo-gear.cyclic.app/get",{
+      // let result= await fetch("http://localhost:3000/get",{
+
 
         headers:{
           authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}`
