@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import './AddProduct.css'
 import netflixLogo from '../../src/assets/images/netflixLogo.jpg';
 
