@@ -15,7 +15,7 @@ const ProductList = () =>{
 // Bearer ka dhyan rakha kro.................
     const getProducts = async () =>{
 
-      let result= await fetch("http://localhost:3000/get",{
+      let result= await fetch("https://drab-red-cape-buffalo-gear.cyclic.app/get",{
 
         headers:{
           authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}`

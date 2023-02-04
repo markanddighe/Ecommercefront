@@ -30,7 +30,7 @@ const SignIn = () =>{
 
       // console.log(email,password);
   
-      let result = await fetch('http://localhost:3000/login', {
+      let result = await fetch('https://drab-red-cape-buffalo-gear.cyclic.app/login', {
 
           method: 'post',
           body: JSON.stringify({email,password}),

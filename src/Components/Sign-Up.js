@@ -24,7 +24,7 @@ const SignUp = () => {
 
     console.log(name,email,password,cpassword,phone,address);
 
-    let result= await fetch("http://localhost:3000/register",{
+    let result= await fetch("https://drab-red-cape-buffalo-gear.cyclic.app/register",{
 
         method:'post',
         body: JSON.stringify({name,email,password,cpassword,phone,address}),

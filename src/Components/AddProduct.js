@@ -33,7 +33,7 @@ const userId= JSON.parse(localStorage.getItem('id'))._id
 
 // console.log(userId);
 
-let result = await fetch("http://localhost:3000/post",{
+let result = await fetch("https://drab-red-cape-buffalo-gear.cyclic.app/post",{
 
       method: 'post',
       body: JSON.stringify({name,age,city,salary,userId}),
